@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/screens/chat_screen.dart';
-import 'package:task_manager/screens/contacts.dart';
 import 'package:task_manager/screens/homepage.dart';
 import 'package:task_manager/screens/tab_controller.dart';
 
 import '../signup and signin/home_screen.dart';
+import 'contacts.dart';
 
 class botomnavigator extends StatefulWidget {
   const botomnavigator({super.key});
@@ -16,11 +16,11 @@ class botomnavigator extends StatefulWidget {
 class _botomnavigator extends State<botomnavigator> {
   int currentIndexValue = 0;
   List screenList = [
-    homepage(),
-    tabcontroller(),
-    chat_screen(),
-    contacts(),
-    Home_Screen()
+    const homepage(),
+    const tabcontroller(),
+    const chat_screen(),
+    const contacts(),
+    const Home_Screen()
   ];
 
   @override
@@ -36,7 +36,7 @@ class _botomnavigator extends State<botomnavigator> {
           });
         },
         currentIndex: currentIndexValue,
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: "Home",
@@ -54,8 +54,8 @@ class _botomnavigator extends State<botomnavigator> {
               label: "Contacts",
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Icon(Icons.logout_outlined),
-              label: "Log Out",
+              icon: Icon(Icons.settings),
+              label: "Setting",
               backgroundColor: Colors.white),
         ],
       ),

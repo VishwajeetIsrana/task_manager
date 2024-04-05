@@ -21,8 +21,57 @@ class _Home_ScreenState extends State<Home_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          InkWell(
+          // actions: [
+          //   InkWell(
+          //       onTap: () {
+          //         logout();
+          //         FirebaseAuth.instance.signOut();
+          //         print("User successfully signout");
+          //         Navigator.pushAndRemoveUntil(
+          //             context,
+          //             MaterialPageRoute(
+          //                 builder: (BuildContext context) =>
+          //                     const Signup_Screen()),
+          //             (Route<dynamic> route) => false);
+          //       },
+          //       child: const Padding(
+          //           padding: EdgeInsets.only(right: 20.0),
+          //           child: Text(
+          //             "Logout",
+          //             style: TextStyle(
+          //                 color: Colors.black,
+          //                 fontSize: 18,
+          //                 fontWeight: FontWeight.bold),
+          //           )))
+          // ],
+          ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Help",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "About",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Privacy",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            InkWell(
               onTap: () {
                 logout();
                 FirebaseAuth.instance.signOut();
@@ -34,16 +83,13 @@ class _Home_ScreenState extends State<Home_Screen> {
                             const Signup_Screen()),
                     (Route<dynamic> route) => false);
               },
-              child: const Padding(
-                  padding: EdgeInsets.only(right: 20.0),
-                  child: Text(
-                    "Logout",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  )))
-        ],
+              child: Text(
+                "Log Out",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

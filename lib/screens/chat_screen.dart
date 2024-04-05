@@ -9,11 +9,29 @@ class chat_screen extends StatefulWidget {
 }
 
 class _chat_screenState extends State<chat_screen> {
+  List Project = [
+    {'project name': 'Zomato', 'Time': 'Complete The Task In 2 Months'},
+    {'project name': 'Flipkart', 'Time': 'Complete The Task In 2 Months'},
+    {'project name': 'VIP Bank', 'Time': 'Complete The Task In 2 Months'},
+    {'project name': 'D Constuction', 'Time': 'Complete The Task In 2 Months'},
+    {'project name': 'Printing World', 'Time': 'Complete The Task In 2 Months'},
+    {'project name': 'Web News', 'Time': 'Complete The Task In 2 Months'},
+    {'project name': 'E Comerse', 'Time': 'Complete The Task In 2 Months'},
+    {
+      'project name': 'Creative Acadmy',
+      'Time': 'Complete The Task In 2 Months'
+    },
+    {
+      'project name': 'Vishwa Transport',
+      'Time': 'Complete The Task In 2 Hours'
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black26,
+        backgroundColor: Colors.purple,
         title: Center(child: Text("Project Groups")),
       ),
       body: SingleChildScrollView(
@@ -26,7 +44,7 @@ class _chat_screenState extends State<chat_screen> {
                 child: ListView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: 100,
+                    itemCount: Project.length,
                     itemBuilder: (context, index) {
                       return ClipRRect(
                         borderRadius: BorderRadius.circular(15), // Image border
@@ -37,14 +55,14 @@ class _chat_screenState extends State<chat_screen> {
                             height: 100,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
-                                color: Colors.white10,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 5,
-                                    color: Colors.black26,
-                                    spreadRadius: 2,
-                                  ),
-                                ],
+                                color: Colors.black12,
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //     blurRadius: 10,
+                                //     color: Colors.black26,
+                                //     spreadRadius: 1,
+                                //   ),
+                                // ],
                                 border: Border.all(color: Colors.black38),
                                 borderRadius: BorderRadius.circular(15)),
                             child: Row(
@@ -57,23 +75,28 @@ class _chat_screenState extends State<chat_screen> {
                                         height: 60,
                                         width: 60,
                                         decoration: BoxDecoration(
+                                            border:
+                                                Border.all(color: Colors.black),
                                             borderRadius:
                                                 BorderRadius.circular(100),
-                                            color: Colors.black38),
+                                            color: Colors.black12),
+                                        child: Icon(Icons.work),
                                       ),
                                       SizedBox(
                                         width: 40,
                                       ),
                                       Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Text(
-                                            "Project Name",
+                                            Project[index]['project name'],
                                             style: TextStyle(
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600),
                                           ),
                                           Text(
-                                            "Project Name",
+                                            Project[index]['Time'],
                                             style: TextStyle(
                                                 fontSize: 13,
                                                 fontWeight: FontWeight.w400),

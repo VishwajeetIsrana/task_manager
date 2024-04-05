@@ -256,11 +256,11 @@ class _Signin_ScreenState extends State<Signin_Screen> {
                               width: 40,
                             ),
                           ),
-                          // Image.asset(
-                          //   "assets/images/apple-logo.png",
-                          //   height: 40,
-                          //   width: 40,
-                          // ),
+                          Image.asset(
+                            "assets/images/apple-logo.png",
+                            height: 40,
+                            width: 40,
+                          ),
                         ],
                       ),
                     ),
