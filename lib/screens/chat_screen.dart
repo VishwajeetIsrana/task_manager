@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:task_manager/screens/contacts.dart';
 
 class chat_screen extends StatefulWidget {
   const chat_screen({super.key});
@@ -32,7 +33,11 @@ class _chat_screenState extends State<chat_screen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: Center(child: Text("Project Groups")),
+        title: Center(
+            child: Text(
+          "Project Groups",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        )),
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -51,62 +56,66 @@ class _chat_screenState extends State<chat_screen> {
 
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            height: 100,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                                color: Colors.black12,
-                                // boxShadow: [
-                                //   BoxShadow(
-                                //     blurRadius: 10,
-                                //     color: Colors.black26,
-                                //     spreadRadius: 1,
-                                //   ),
-                                // ],
-                                border: Border.all(color: Colors.black38),
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width: 60,
-                                        decoration: BoxDecoration(
-                                            border:
-                                                Border.all(color: Colors.black),
-                                            borderRadius:
-                                                BorderRadius.circular(100),
-                                            color: Colors.black12),
-                                        child: Icon(Icons.work),
-                                      ),
-                                      SizedBox(
-                                        width: 40,
-                                      ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Text(
-                                            Project[index]['project name'],
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          Text(
-                                            Project[index]['Time'],
-                                            style: TextStyle(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w400),
-                                          ),
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => contacts()));
+                            },
+                            child: Container(
+                              height: 100,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //     blurRadius: 10,
+                                  //     color: Colors.black26,
+                                  //     spreadRadius: 1,
+                                  //   ),
+                                  // ],
+                                  border: Border.all(color: Colors.black38),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                          border:
+                                              Border.all(color: Colors.black),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: Colors.black12),
+                                      child: Icon(Icons.work),
+                                    ),
+                                    SizedBox(
+                                      width: 40,
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text(
+                                          Project[index]['project name'],
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        Text(
+                                          Project[index]['Time'],
+                                          style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ),

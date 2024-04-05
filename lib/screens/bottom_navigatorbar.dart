@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/screens/call_log.dart';
 import 'package:task_manager/screens/chat_screen.dart';
 import 'package:task_manager/screens/homepage.dart';
 import 'package:task_manager/screens/tab_controller.dart';
@@ -19,7 +20,7 @@ class _botomnavigator extends State<botomnavigator> {
     const homepage(),
     const tabcontroller(),
     const chat_screen(),
-    const contacts(),
+    const calllog(),
     const Home_Screen()
   ];
 

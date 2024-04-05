@@ -21,7 +21,11 @@ class _tabcontrollerState extends State<tabcontroller> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purple,
-          title: Center(child: Text("Task Reports")),
+          title: Center(
+              child: Text(
+            "Task Reports",
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          )),
           bottom: const TabBar(
             indicatorColor: Colors.black,
             unselectedLabelColor: Color.fromARGB(255, 252, 252, 252),
